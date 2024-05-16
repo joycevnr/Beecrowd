@@ -58,4 +58,34 @@ Textura da fruta (suave ou áspera): uma string indicando se a fruta é suave ("
 Cor da fruta (vermelha, laranja ou amarela): uma string indicando a cor da fruta.
 Saída
 O código deve produzir uma saída indicando a classificação da fruta com base nas características fornecidas.
+
+
+##OUTRA SOLUÇÃO
+   def prever_fruta(peso, textura, cor):
+    # Lógica de decisão baseada nas características fornecidas
+    data = {'morango':[150,"smooth","red"," "],
+            'banana':[150,"rough","yellow","a "],
+            'maçã':[130,"rough","red","a "],
+            'laranja':[120,"smooth","orange","a "]
+    }
+    check = False
+    for a, b in data.items(): # << modificar  
+        if all([peso >= b[0], textura == b[1], cor == b[2]]):
+            answer, check = f'A fruta é um{b[3]}{a}!', True
+            break
+    
+    return answer if check else 'Não foi possível classificar a fruta.'
+        
+# TODO: Desenvolva a Função para prever a classe da fruta
+# Entrada do usuário
+peso_fruta = float(input())
+textura_fruta = input()
+cor_fruta = input()
+
+# Chamada da função de previsão
+resultado = prever_fruta(peso_fruta, textura_fruta, cor_fruta)
+
+# Saída da previsão
+print(resultado)
+   
     """
