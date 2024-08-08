@@ -23,5 +23,3 @@ else:
              print(alt)
     else:
         print(valores)
-            
-        
