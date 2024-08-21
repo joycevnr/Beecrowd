@@ -1,3 +1,4 @@
+#Solução mais complexo - ver a solucao2
 def gerar_e_imprimir_sequencia(limite):
     numero = 1  # Primeiro número da sequência
     soma = 0    # Soma acumulada dos números
