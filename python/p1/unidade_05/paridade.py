@@ -5,5 +5,5 @@ while True:
         if elem == '1':
             qtd +=1
     if qtd % 2 != 0:
-        print('ERROR')
+        print('ERRO: ' + valor)
         break
