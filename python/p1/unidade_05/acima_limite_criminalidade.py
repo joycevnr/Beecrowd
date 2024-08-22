@@ -1,26 +1,58 @@
-import sys
-media_ssp = float(input())
-total = 0
-
-while True:
-    valores = input()
-    
-    if valores == 'fim':
-        break
+# #Passou notest
+def lista_medias(lista):
+    # Calcula a soma dos elementos da lista
+    soma_ocorrencias = 0
+    for i in range(len(lista)):
+        soma_ocorrencias += int(lista[i])
         
-    list_valores = [int(x) for x in valores.split()] #split() é usado em strings, não em inteiros
-        #total = sum([valor for valor in valores])
-
-    for numero in list_valores:
-        total += numero
-
-    media = total / len(list_valores)
-
-    if media < media_ssp / 2:
-        break
+    # Calcula a média
+    media = soma_ocorrencias / len(lista)
     
-    if media > media_ssp:
-        print(valores)
+    return media
+
+def main():
+    linhas = []
+    media_ssp = float(input())
+    
+    while True:
+        ocorrencias = input()
+        if ocorrencias == "fim":
+            break
+        
+        # Calcula a média das ocorrências
+        media = lista_medias(ocorrencias.split())
+        if (media * 2) < media_ssp:
+            break
+        if media > media_ssp:
+            linhas.append(ocorrencias)
+            
+    for e in linhas:
+        print(e)
+
+main()
+
+### Não passou no test, pois só pode imprimir os valores após digitar fim 
+# media_ssp = float(input())
+
+# while True:
+#     valores = input()
+#     total = 0
+#     if valores == 'fim':
+#         break
+        
+#     list_valores = [int(x) for x in valores.split()] #split() é usado em strings, não em inteiros
+#     #total = sum([valor for valor in valores])
+#     #print(list_valores)
+
+#     for numero in list_valores:
+#         total += numero
+
+#     media = total / len(list_valores)
+
+#     if media < media_ssp / 2:
+#         break
+#     if media > media_ssp:
+#         print(valores)
 
 # import sys
 
