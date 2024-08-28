@@ -21,9 +21,12 @@ while True:
         break
     elif combustivel < 0:
         print("dado inconsistente. combustível negativo.")
+        peso_count += 1
         break
     elif altitude < 0:
         print("dado inconsistente. altitude negativa.")
+        combustivel_count += 1
+        peso_count += 1
         break
     
     # Se todos os dados são válidos, incrementar os contadores
