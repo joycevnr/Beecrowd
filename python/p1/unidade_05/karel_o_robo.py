@@ -1,3 +1,20 @@
+x, y = 0, 0
+while True:
+    comando = input().split()
+    if comando[1] == '0':
+        print("Fim de jogo")
+        break
+    elif comando[0] == 'C': #acima
+        y += int(comando[1])
+    elif comando[0] == 'B': #abaixo
+        y -= int(comando[1])
+    elif comando[0] == 'E': #esquerda
+        x -= int(comando[1])
+    elif comando[0] == 'D': #direita
+        x += int(comando[1])
+    if abs(y) == abs(2*x) and y != 0 and  x != 0:
+        print(f"Parabéns, conquista do portal ({x}, {y})")
+        break
 
 
 # # Karel, o Robô
