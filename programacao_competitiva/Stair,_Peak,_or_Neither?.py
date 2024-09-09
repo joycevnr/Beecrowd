@@ -10,10 +10,8 @@ for i in range(qtd):
         print('NONE')
 
 
-# # Read the number of test cases
 # qtd = int(input())
 
-# # Iterate through each test case
 # for _ in range(qtd):
 #     # Read and split the input values
 #     valores = list(map(int, input().split()))
