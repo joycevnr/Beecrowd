@@ -30,3 +30,14 @@ assert unico("") == ""
 # assert unico("") == ""
 # ```
 
+# outra solucao
+def unico(string):
+    if not string:  
+        return ""
+    
+    new_string = string[0]  
+    for i in range(1, len(string)):  
+        if string[i] != string[i-1]:  # Compara o atual com o anterior
+            new_string += string[i]
+    return new_string
+
