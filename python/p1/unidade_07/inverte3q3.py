@@ -1,20 +1,57 @@
 def inverte3a3(s):
     pedaços = []
+    flag = 0  
+
+    # Dividindo a string em pedaços de 3 caracteres manualmente
+    pedaco = ''
+    for i in range(len(s)):
+        pedaco += s[i]
+        flag += 1
+        
+        if flag == 3:
+            pedaços.append(pedaco)
+            pedaco = ''  # Reseta o pedaço para começar um novo
+            flag = 0  # Reseta o flag
+
+    # Adiciona o último pedaço se houver caracteres restantes
+    if pedaco:
+        pedaços.append(pedaco)
     
-    for i in range(0, len(s), 3):
-        pedaços.append(s[i:i+3])
-        # pedaços = ['abc', 'def']
-        new_string = ''
+    new_string = ''  # Inicializa a nova string fora do loop
+
+    # Invertendo a ordem dos pedaços manualmente
     for i in range(len(pedaços) - 1, -1, -1):
-        # range(start, stop, step)
-        # Por exemplo, se pedaços tem 4 elementos, len(pedaços) - 1 é 3.
         new_string += pedaços[i]
     
     return new_string
 
+# Teste
+s = "abcdefghijklm"
+print(inverte3a3(s))  # Saída esperada: "ijklmdefabc"
 
 
-assert inverte3a3("abcdef") == "defabc"
+
+
+# assert inverte3a3("abcdef") == "defabc"
+
+# def inverte3a3(s):
+#     pedaços = []
+    
+#     for i in range(0, len(s), 3):
+        
+#         pedaços.append(s[i:i+3])
+#         # pedaços = ['abc', 'def']
+#         new_string = ''
+#     for i in range(len(pedaços) - 1, -1, -1):
+#         # range(start, stop, step)
+#         # Por exemplo, se pedaços tem 4 elementos, len(pedaços) - 1 é 3.
+#         new_string += pedaços[i]
+    
+#     return new_string
+
+
+
+# assert inverte3a3("abcdef") == "defabc"
 
 # # Sequencia Invertida 3 a 3
 
