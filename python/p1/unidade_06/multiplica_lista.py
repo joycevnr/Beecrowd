@@ -1,7 +1,7 @@
 def multiplica_lista(n, lista):
     new_lista = []
     for i in range(n):
-        new_lista += lista.copy()
+        new_lista += lista
     return new_lista
     
 
