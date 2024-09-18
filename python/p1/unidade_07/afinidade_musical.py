@@ -44,3 +44,19 @@ assert tem_afinidade(l1, l2) == True
 # l2 = ['zeze', 'joao', 'u2', 'jquest']
 # assert tem_afinidade(l1, l2) == True
 # ```
+
+
+# def tem_afinidade(l1, l2):
+#     # Converte as listas em conjuntos para eliminar duplicatas e facilitar a interseção
+#     intersecao = set(l1) & set(l2)  # Interseção dos dois conjuntos, 
+#     return len(intersecao) >= 3  
+
+# l1 = ['zeze', 'bruno e marrone', 'joao', 'pedro', 'u2']
+# l2 = ['zeze', 'joao', 'u2', 'jquest']
+# assert tem_afinidade(l1, l2) == True
+
+
+#Operador & (Interseção de Conjuntos):
+# Uso: Utilizado entre dois conjuntos (set) para encontrar a interseção.
+# Sintaxe: set1 & set2
+# Tipo de Operação: Operação de conjuntos que retorna um novo conjunto contendo apenas os elementos que estão em ambos os conjuntos.
