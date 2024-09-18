@@ -33,3 +33,25 @@ assert filas_de_atendimento(pacientes, 2) == [
 # Passo 1: Incrementa o índice: 2 + 1 resulta em 3.
 # Passo 2: Aplica o módulo: 3 % 3 resulta em 0.
 # O resultado 0 faz com que o índice volte ao início da lista de médicos, permitindo a distribuição cíclica.
+
+# Fila de Atendimento de Pacientes
+
+# Em um consultório médico, os pacientes que vão chegando entram em
+# uma fila única para a espera de atendimento. Dependendo do dia,
+# podem atender neste consultório, até `n` médicos. Pede-se que
+# você escreva a função `filas_de_atendimento(fila_unica, n)` cujo
+# propósito é distribuir os pacientes em filas para cada um dos
+# médicos. A ordem de chegada dos pacientes deve ser preservada. 
+
+# Para distribuir os pacientes nas filas de cada médico deve-se
+# pegar, em ordem de chegada na fila única, um paciente para cada
+# fila de médico e repetir o processo até terminar a fila única.
+
+# O primeiro parâmetro passado para a função é a fila dos pacientes
+# por ordem de chegada. O segundo parâmetro, refere-se ao
+# número de médicos que estão atendendo na clínica. Você pode
+# assumir que
+# há pelo menos um médico (`n` > 0). A função deve retornar uma
+# lista com as filas formadas para cada um dos médicos. É
+# importante que se houver filas vazias, elas devem ser retornadas
+# normalmente.
