@@ -1,6 +1,42 @@
+##isertion_sort
+def inserir(lista, valor):
+    lista.append(valor)
+    pos_valor = len(lista) -1
 
 
+    while pos_valor > 0 and lista[pos_valor] > lista[pos_valor-1]:
+        lista[pos_valor-1], lista[pos_valor] = lista[pos_valor], lista[pos_valor-1]
+        pos_valor -= 1
 
+def noves_fora(lista):
+    hist = []
+    hist.append(lista.copy())
+    
+    if len(lista) == 1 and lista[0] == 9:
+        resultado = lista[0] % 9
+        hist.append([resultado])
+        return (resultado, hist)
+
+    while len(lista) > 1:
+        soma = lista.pop(0) + lista.pop(0)
+        resultado = soma % 9
+        inserir(lista, resultado)
+        hist.append(lista.copy())
+
+    return (lista[0], hist)
+
+#print(noves_fora([4]))
+assert noves_fora([4]) == (4, [[4]])
+assert noves_fora([9]) == (0, [[9], [0]])
+assert noves_fora([9, 9]) == (0, [[9, 9], [0]])
+
+
+# def ordenar(lista):
+#     for i in range(1, len(lista)):
+#         j = i - 1
+#         while j >= 0 and lista[j] < lista[j + 1]:
+#             lista[j], lista[j + 1] = lista[j+1], lista[j]
+#             j -= 1
 
 # # Uma Variação do Método Noves Fora
 
@@ -55,7 +91,7 @@
 
 #     [9, 7, 5, 4, 3, 1]
 #     [7, 5, 4, 3, 1] porque 9 + 7 é 16, noves fora 7
-#     [4, 3, 3, 1] porque 7 + 5 é 12, noves fora 3
+#     [3, 4, 3, 1] porque 7 + 5 é 12, noves fora 3
 #     [7, 3, 1] porque 4 + 3 é 7, noves fora 7
 #     [1, 1] porque 7 + 3 é 10, noves fora 1
 #     [2] porque 1 + 1 é 2, noves fora 2 que é o valor final
