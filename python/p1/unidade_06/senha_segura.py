@@ -1,3 +1,5 @@
+## Não passou no teste
+
 def senha_segura(senha):
     for i in range(len(senha)):
         numero = int(senha[i])
