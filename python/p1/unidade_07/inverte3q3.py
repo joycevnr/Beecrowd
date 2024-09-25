@@ -29,6 +29,7 @@ def inverte3a3(s):
 s = "abcdefghijklm"
 print(inverte3a3(s))  # Saída esperada: "ijklmdefabc"
 
+assert inverte3a3("abcdef") == "defabc"
 
 
 

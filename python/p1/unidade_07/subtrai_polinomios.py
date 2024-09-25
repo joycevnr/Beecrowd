@@ -32,7 +32,23 @@ def subtrai_polinomios(p1, p2):
 
     return lista
 
+# def subtrai_polinomios(p1, p2):
+#     lista = []
+#     m = len(p1) if len(p1) >= len(p2) else len(p2) #comprimento máximo
 
+#     lista = [0] * m
+
+#     # Subtrai os coeficientes dos polinômios
+#     for i in range(len(p1)):
+#         lista[i] += p1[i]
+#     for i in range(len(p2)):
+#         lista[i] -= p2[i]
+
+#     # Remove os zeros à direita
+#     while lista and lista[-1] == 0:
+#         lista.pop()
+
+#     return lista
 
 # def subtrai_polinomios(p1, p2):
 #     lista = []
