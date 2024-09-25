@@ -1,21 +1,39 @@
-  
 def desloca(lista, origem, destino):
-    # Salva o valor que será movido
-    valor = lista[origem]
+    lista.append(lista[origem])
+    lista.pop(origem)
+    print('remove', lista)
+    #insert
+    i = len(lista) -1
+    while i != destino:
+        lista[i], lista[i-1] = lista[i-1], lista[i]
+        i -= 1 
     
-    # Desloca os elementos para a esquerda
-    for i in range(origem, destino):
-        lista[i] = lista[i + 1]
+    # for i in range(len(lista)-1, -1, -1):
+    #     if i != destino:
+    #         lista[i], lista[i-1] = lista[i-1], lista[i]
+    #     else: break
+        
         print(lista)
-    
-    # Coloca o valor na posição de destino
-    lista[destino] = valor
-
-# Testes
 
 l1 = [2,6,9,11,13,5]
 desloca(l1, 2, 4)
 assert l1 == [2,6,11,13,9,5]
+
+# def desloca(lista, origem, destino):
+#     # Salva o valor que será movido
+#     valor = lista[origem]
+    
+#     # Desloca os elementos para a esquerda
+#     for i in range(origem, destino):
+#         lista[i] = lista[i + 1]
+#         print(lista)
+    
+#     # Coloca o valor na posição de destino
+#     lista[destino] = valor
+
+# Testes
+
+
 
 # l1 = [0,1,2,3,4,5,6]
 # desloca(l1, 4, 6)
