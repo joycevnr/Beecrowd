@@ -1,23 +1,24 @@
-
-##AJUSTAR
-
-
-# def soma_polinomios(p1, p2):
-#     menor = p1 if len(p1) < len(p2) else p2
-#     maior = p1 if len(p1) > len(p2) else p2
+def soma_polinomios(p1, p2):
+    # Cria uma lista para o resultado com zeros
+    maior = len(p1) if len(p1) > len(p2) else len(p2)
+    resultado = [0] * maior
     
-#     for i in range(len(menor)-1, -1, -1):
-#         for j in range(len(maior)-1, -1, -1):
-#             maior[j] += menor[i]
-#     return maior
-            
-            
-# p1 = [3, 4, -5]
-# p2 = [5, 0, 0, 0, 2, 0, -1]
-# print(soma_polinomios(p1, p2))
-# assert soma_polinomios(p1, p2) == [5, 0, 0, 0, 5, 4, -6]
-        
-# # # Soma Polinômios
+    p1 = [0] * (maior - len(p1)) + p1
+    p2 = [0] * (maior - len(p2)) + p2
+
+    for i in range(len(resultado)-1, -1, -1):
+        resultado[i] += p1[i]
+
+        resultado[i] += p2[i]
+    return resultado
+
+# Testes
+p1 = [3, 4, -5]
+p2 = [5, 0, 0, 0, 2, 0, -1]
+print(soma_polinomios(p1, p2))
+assert soma_polinomios(p1, p2) == [5, 0, 0, 0, 5, 4, -6]
+
+# Soma Polinômios
 
 # Um software matemático representa polinômios de uma única
 # variável através de listas que contêm os coeficientes em ordem
@@ -44,38 +45,3 @@
 # coeficientes de mesmo grau dos polinômios sendo somados. 
 
 # <img src="http://www.dsc.ufcg.edu.br/~dalton/dropbox/images/soma_polinomios.png" alt="soma polinomios" width="200">
- 
-
-# ## Exemplos de asserts
-
-# O mesmo exemplo dado acima segue abaixo na forma de _asserts_
-# para a função pedida.
-
-# ```
-# p1 = [3, 4, -5]
-# p2 = [5, 0, 0, 0, 2, 0, -1]
-# assert soma_polinomios(p1, p2) == [5, 0, 0, 0, 5, 4, -6]
-# ```
-
-# <small>Dalton Serey</small>
-
-
-def soma_polinomios(p1, p2):
-    # Cria uma lista para o resultado com zeros
-    tamanho = max(len(p1), len(p2))
-    resultado = [0] * tamanho
-
-    # Soma os coeficientes
-    for i in range(len(resultado)):
-        if i < len(p1):
-            resultado[i] += p1[i]
-        if i < len(p2):
-            resultado[i] += p2[i]
-    
-    return resultado
-
-# Testes
-p1 = [3, 4, -5]
-p2 = [5, 0, 0, 0, 2, 0, -1]
-print(soma_polinomios(p1, p2))
-assert soma_polinomios(p1, p2) == [5, 0, 0, 0, 5, 4, -6]
