@@ -22,6 +22,15 @@ fila = [327, 228, 516, 535, 248, 532]
 assert ajusta_prioridades(fila) is None
 assert fila == [535, 532, 327, 228, 516, 248]
 
+def ajusta_prioridades(fila):
+    c=0
+    for i in range(len(fila)):
+        if fila[i] % 10 < 6:
+            for j in range(i, c+0, -1):
+                fila[j], fila[j-1] = fila[j-1], fila[j]
+            c+=1
+
+
 
 
 #O operador de módulo retorna o resto da divisão de um número por outro, e quando usado com 10, ele fornece o último dígito de um número decimal.
